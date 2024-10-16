@@ -28,8 +28,9 @@ function call_REST_API_Hello() {
       );
     
     fetch(url)
-    .then(data => {
-        document.getElementById('message').innerText = data.message;
+    .then(response => response.text())
+    .then(text => {
+        document.getElementById('message').innerText = text;
     })
     .catch(error => console.error('Error:', error));
 }
