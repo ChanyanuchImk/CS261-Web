@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: "http://localhost:8080/api/products", // Assuming Spring Boot runs on port 8080
+        url: "http://localhost:8081/api/products", // Assuming Spring Boot runs on port 8080
         method: "GET",
         success: function(data) {
             let productList = $("#product-list");
