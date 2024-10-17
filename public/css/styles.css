@@ -1,47 +1,117 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6f2; /* พื้นหลังสีชมพูอ่อน */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .login-container {
-    width: 300px;
-    margin: 100px auto;
+    width: 350px;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.05); /* ลูกเล่นขยายขนาดเล็กน้อยเมื่อ hover */
 }
 
 h1 {
-    text-align: center;
+    font-size: 24px;
+    color: #bb7695;
     margin-bottom: 20px;
 }
 
 label {
-    display: block;
+    display: inline-block; /* เปลี่ยนจาก block เป็น inline-block */
     margin: 10px 0 5px;
+    color: #c19aaa;
+    font-weight: bold;
+    width: 30%; /* กำหนดความกว้างของ label ให้เหมาะสม */
+    text-align: left; /* จัดตำแหน่งให้ตัวอักษรอยู่ซ้าย */
+}
+input {
+    width: 68%; /* ปรับขนาด input ให้สอดคล้องกับ label */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #714c5f;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f7d2de;
+    transition: border-color 0.3s ease-in-out;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+
+input:focus {
+    border-color: #823151; /* เปลี่ยนสีขอบเมื่อ focus */
 }
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #ff66b3;
     border: none;
-    color: #fff;
+    border-radius: 5px;
+    color: #ffffff;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #662c43;
+    transform: translateY(-2px); /* ลูกเล่นเคลื่อนขึ้นเมื่อ hover */
 }
 
 #message {
     margin-top: 20px;
+    color: #280e18;
+    font-size: 14px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+  }
+  
+/* Modal Content */
+.modal-content {
+    background-color: #ffe6f2;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ff66b3;
+    width: 80%;
+    max-width: 400px;
     text-align: center;
+    color: #ff3385;
+}
+
+/* Close Button */
+.close {
+    color: #ff3385;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff66b3;
+    cursor: pointer;
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
+        <h1>TU Login</h1>
         <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -16,9 +16,17 @@
             <input type="password" id="password" name="password" required>
             <button type="button" onclick="submitLogin()">Login</button>
             <button type="button" onclick="call_REST_API_Hello()">Hello</button>
+            <div id="message" style="margin-top: 20px; color: blue;"></div>
         </form>
         <p id="message"></p>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modalMessage"></p> <!-- ข้อความจะแสดงที่นี่ -->
+        </div>
+      </div>
+      
     <script src="js/script.js"></script>
 </body>
 </html>
