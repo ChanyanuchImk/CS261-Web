@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="background"></div>
+    <img src="img/Thammasat_main_logo.png" alt="" width="100px">
     <div class="login-container">
-        <h1>Login</h1>
+        <h1>─ ⋆⋅☆⋅⋆ TU LOGIN ⋆⋅☆⋅⋆ ─</h1>
         <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="button" onclick="submitLogin()">Login</button>
-            <button type="button" onclick="call_REST_API_Hello()">Hello</button>
+            <button type="button" onclick="submitLogin()">LOG IN</button>
+            <div id="message" style="margin-top: 20px; color: rgb(72, 72, 77);"></div>
         </form>
         <p id="message"></p>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modalMessage"></p> <!-- ข้อความจะแสดงที่นี่ -->
+        </div>
+      </div>
+      
     <script src="js/script.js"></script>
 </body>
 </html>

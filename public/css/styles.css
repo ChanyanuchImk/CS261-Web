@@ -1,47 +1,149 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* เลเยอร์พื้นหลัง */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.law.tu.ac.th/wp-content/uploads/2021/02/TU1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0; /* อยู่ด้านล่างสุด */
+    filter: blur(10px); /* เบลอพื้นหลัง */
+    -webkit-filter: blur(10px); /* สำหรับเบราว์เซอร์ที่รองรับ */
+}
+
+img{
+    position: absolute;
+    left: 30px;
+    top: 30px;
 }
 
 .login-container {
-    width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 30px;
+    background-color: rgba(252, 213, 213, 0.723);
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1; /* จัดให้กล่องอยู่บนพื้นหลัง */
+    position: relative;
+    height: 400px;
+    margin-top: 60px;
+}
+
+.login-container:hover {
+    transform: scale(1.05); /* ลูกเล่นขยายขนาดเล็กน้อยเมื่อ hover */
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 24px;
+    color: #bb7695;
+    margin-bottom: 40px;
+    margin-top: 50px;
 }
+
 
 label {
-    display: block;
+    display: flex; /* เปลี่ยนจาก block เป็น inline-block */
     margin: 10px 0 5px;
+    color: #c19aaa;
+    font-weight: bold;
+    width: 30%; /* กำหนดความกว้างของ label ให้เหมาะสม */
+    text-align:justify; /* จัดตำแหน่งให้ตัวอักษรอยู่ซ้าย */
+    margin-left: 12.5%;
+    border-radius: 30px;
+    z-index: 2;
+}
+input {
+    width: 68%; /* ปรับขนาด input ให้สอดคล้องกับ label */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #714c5f;
+    border-radius: 30px;
+    outline: none;
+    background-color: #f6dee5;
+    transition: border-color 0.3s ease-in-out;
+    z-index: 2;
 }
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+
+input:focus {
+    border-color: #823151; /* เปลี่ยนสีขอบเมื่อ focus */
 }
 
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    width: 35%;
+    padding: 12px;
+    background-color: #98254d;
     border: none;
-    color: #fff;
+    border-radius: 20px;
+    color: #ffffff;
     cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #662c43;
+    transform: translateY(-2px); /* ลูกเล่นเคลื่อนขึ้นเมื่อ hover */
 }
 
 #message {
     margin-top: 20px;
+    color: #280e18;
+    font-size: 14px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* ซ่อนไว้ก่อน */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+  }
+  
+/* Modal Content */
+.modal-content {
+    background-color: #ebcbcb;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #291c1c;
+    width: 80%;
+    max-width: 400px;
     text-align: center;
+    color: #68453d;
+}
+
+/* Close Button */
+.close {
+    color: #63443a;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff66b3;
+    cursor: pointer;
 }
